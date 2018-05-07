@@ -25,7 +25,8 @@
 		alpha: true
 	});
 	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-	renderer.setSize( 640, 480 );
+	// renderer.setSize( 640, 480 );
+	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.domElement.style.position = 'absolute'
 	renderer.domElement.style.top = '0px'
 	renderer.domElement.style.left = '0px'
@@ -36,7 +37,19 @@
 
 	// init scene and camera
 	var scene	= new THREE.Scene();
-		
+
+	//光线
+	var light = new THREE.DirectionalLight(0xffffff,1.0);
+	//位置不同，方向光作用于物体的面也不同，看到的物体各个面的颜色也不同
+    //light.position.set(0,1,0.5 ).normalize();
+	light.position.set(0,30,40);
+    light.castShadow = true; // 启用阴影选项
+    scene.add(light);
+
+    //环境光设置
+    var ambilight = new THREE.AmbientLight(0xffffff,0.2);
+    scene.add(ambilight);
+
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Initialize a basic camera
 	//////////////////////////////////////////////////////////////////////////////////
@@ -144,6 +157,34 @@
 	// })
 
     //导入模型
+
+    onRenderFcts.push(function(delta){
+//            if(obj)
+//			{
+//			    obj.rotation.y=+1;
+//			}
+    });
+
+    // render the scene
+	onRenderFcts.push(function(){
+		renderer.render( scene, camera );
+	})
+
+	// run the rendering loop
+	var lastTimeMsec= null
+	requestAnimationFrame(function animate(nowMsec){
+		// keep looping
+		requestAnimationFrame( animate );
+		// measure time
+		lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+		var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+		lastTimeMsec	= nowMsec
+		// call each update function
+		onRenderFcts.forEach(function(onRenderFct){
+			onRenderFct(deltaMsec/1000, nowMsec/1000)
+		})
+	})
+
     var onProgress = function ( xhr ) {
             if ( xhr.lengthComputable ) {
                 var percentComplete = xhr.loaded / xhr.total * 100;
@@ -164,39 +205,16 @@
                 obj=object;
                 scene.add( object );
                 object.position.set(0,0,0);
-                object.scale.set(0.001,0.001,0.001);
+                object.scale.set(0.0001,0.0001,0.0001);
                 var axes=new THREE.AxisHelper(10);
                 scene.add(axes);
             }, onProgress, onError );
         });
 
-    onRenderFcts.push(function(delta){
-//            if(obj)
-//			{
-//			    obj.rotation.y=+1;
-//			}
-    });
+    
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
 	//////////////////////////////////////////////////////////////////////////////////
 
-	// render the scene
-	onRenderFcts.push(function(){
-		renderer.render( scene, camera );
-	})
-
-	// run the rendering loop
-	var lastTimeMsec= null
-	requestAnimationFrame(function animate(nowMsec){
-		// keep looping
-		requestAnimationFrame( animate );
-		// measure time
-		lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
-		var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
-		lastTimeMsec	= nowMsec
-		// call each update function
-		onRenderFcts.forEach(function(onRenderFct){
-			onRenderFct(deltaMsec/1000, nowMsec/1000)
-		})
-	})
+	
 </script></body>
