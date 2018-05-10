@@ -1,0 +1,446 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 15386,
+      "max": [
+        289.2237548828125,
+        50.197498321533203,
+        -13.642144203186035
+      ],
+      "min": [
+        -289.37045288085938,
+        -124.60545349121094,
+        -497.78433227539062
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 184632,
+      "componentType": 5126,
+      "count": 15386,
+      "max": [
+        1,
+        0.99998354911804199,
+        0.99998414516448975
+      ],
+      "min": [
+        -1,
+        -0.99999833106994629,
+        -0.99998509883880615
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 15386,
+      "max": [
+        1,
+        0.99998706579208374,
+        0.99999207258224487,
+        1
+      ],
+      "min": [
+        -1,
+        -0.99998843669891357,
+        -0.99999213218688965,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 15386,
+      "max": [
+        0.99907881021499634,
+        0.99802321195602417
+      ],
+      "min": [
+        0.00092117569874972105,
+        0.00092117569874972105
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 51342,
+      "max": [
+        15385
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 369264,
+      "componentType": 5126,
+      "count": 142,
+      "max": [
+        23.040798187255859,
+        7.4827432632446289,
+        -187.477294921875
+      ],
+      "min": [
+        -23.040798187255859,
+        -32.964103698730469,
+        -307.20883178710938
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 370968,
+      "componentType": 5126,
+      "count": 142,
+      "max": [
+        0.9980500340461731,
+        0.98980438709259033,
+        0.35008305311203003
+      ],
+      "min": [
+        -0.9980500340461731,
+        0.033754095435142517,
+        -0.27687567472457886
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 246176,
+      "componentType": 5126,
+      "count": 142,
+      "max": [
+        0.80870521068572998,
+        0.88068526983261108,
+        -0.23007617890834808,
+        1
+      ],
+      "min": [
+        -0.80870217084884644,
+        -0.24798163771629333,
+        -0.97026437520980835,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 123088,
+      "componentType": 5126,
+      "count": 142,
+      "max": [
+        0.87102782726287842,
+        0.90205556154251099
+      ],
+      "min": [
+        0.068814955651760101,
+        0.12684439122676849
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 205368,
+      "componentType": 5125,
+      "count": 426,
+      "max": [
+        141
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Javier Martín Hidalgo (https://sketchfab.com/Jj.Mmhh)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/341cc6469d804f0594b0a977272e4b3a",
+      "title": "Curtiss P40 Airplane"
+    },
+    "generator": "Sketchfab-3.22.6",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 207072,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 124224,
+      "byteOffset": 207072,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 372672,
+      "byteOffset": 331296,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 248448,
+      "byteOffset": 703968,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 952416,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/cristalCurtiss_baseColor.jpg"
+    },
+    {
+      "uri": "textures/cristalCurtiss_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/curtissP40_normal.png"
+    },
+    {
+      "uri": "textures/curtissP40_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/curtissP40_baseColor.jpg"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "curtissP40",
+      "normalTexture": {
+        "index": 2,
+        "scale": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 4,
+          "texCoord": 0
+        },
+        "metallicFactor": 1,
+        "metallicRoughnessTexture": {
+          "index": 3,
+          "texCoord": 0
+        },
+        "roughnessFactor": 1
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "cristalCurtiss",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 1,
+        "metallicRoughnessTexture": {
+          "index": 1,
+          "texCoord": 0
+        },
+        "roughnessFactor": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Circle_curtissP40_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Circle_cristalCurtiss_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "014c54eebbbc42c7abde2f750ee981e4.fbx"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5,
+        6
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.073337554931640625,
+        125.26007080078125,
+        -139.69174194335938,
+        1
+      ],
+      "name": "Circle"
+    },
+    {
+      "mesh": 0,
+      "name": "Circle_curtissP40_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Circle_cristalCurtiss_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    }
+  ]
+}
+

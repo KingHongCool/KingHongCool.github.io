@@ -30,6 +30,8 @@
  -->
                 <a-asset-item id="oldcar" src="model/oldcar/scene.gltf"></a-asset-item>
                 <a-asset-item id="plane" src="model/spitfire/scene.gltf"></a-asset-item>
+                <a-asset-item id="m4a1" src="model/m4a1/scene.gltf"></a-asset-item>
+                <a-asset-item id="p40" src="model/P40/scene.gltf"></a-asset-item>
 
                 <!-- <video id="4s" autoplay loop="true" src="video/4s.mp4"></video> -->
         </a-assets>
@@ -47,14 +49,18 @@
             <!-- 视频 -->
              <!-- <a-video src="#4s" width="auto" height="auto" position="0 0 0"></a-video> -->
 
-             <a-entity gltf-model="#oldcar" scale="0.3 0.3 0.3"></a-entity>
+             
+             <!-- <a-entity gltf-model="#plane" scale="0.01 0.01 0.01"></a-entity> -->
+             
+             <a-entity gltf-model="#p40" scale="0.005 0.005 0.005" position="1 0.5 2" rotation="-15 30 15"></a-entity>
 
 		</a-marker>
 
 		<!-- handle matrix marker -->
 		<a-marker type='pattern' url="data/whu2.patt">
+
             
-             <a-entity gltf-model="#plane" scale="0.2 0.2 0.2"></a-entity>
+             <!-- <a-entity gltf-model="#p40" scale="0.2 0.2 0.2"></a-entity> -->
 
             <!-- 导入模型 -->
             <!-- <a-entity obj-model="obj: #spaceship-obj; mtl: #spaceship-mtl" scale="0.1 0.1 0.1"></a-entity>
@@ -64,6 +70,9 @@
 					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
 				</a-torus-knot>
  			</a-box> -->
+
+        <a-entity gltf-model="#oldcar" scale="0.3 0.3 0.3" position="0 0.5 0" rotation="0 0 0"></a-entity>             
+
 		</a-marker>
 		
 		<!-- handle kanji marker -->
@@ -76,7 +85,7 @@
 			</a-box> -->
 			
             <!-- 地球 -->
-			<a-sphere src="picture/earth.jpg" radius="0.5" position="0 0.5 0" segments-height="53">
+			<!-- <a-sphere src="picture/earth.jpg" radius="0.5" position="0 0.5 0" segments-height="53">
               <a-animation attribute="scale"
               dur="1000"
               from= "1 1 1"
@@ -86,7 +95,9 @@
               repeat="indefinite">
               	
               </a-animation>
-            </a-sphere>
+            </a-sphere> -->
+
+            <a-entity gltf-model="#m4a1" scale="0.001 0.001 0.001" position="0 0 0"></a-entity>
 
 		</a-marker>
 		
