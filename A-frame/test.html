@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- <script src="vendor/aframe/build/aframe.min.js"></script> -->
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<!-- include aframe-ar.js -->
+<script src="build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+	<!-- <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - example for a-frame
+	<br/>
+	Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+</div> -->
+	<!-- <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'> -->
+    <a-scene embedded arjs='sourceType: webcam; detectionMode: mono;'>
+		<!-- handle unknown marker -->
+		<!-- <a-marker type='unknown'>
+			<a-box depth="1" height="1" width="1" position='0 0.5 0' material='opacity: 0.5; side:double; color:blue;'></a-box>
+		</a-marker> -->
+
+		<!-- handle hiro marker -->
+		<a-assets>
+               <!--  <a-asset-item id="spaceship-obj" src="model/spaceship/spaceship.obj"></a-asset-item>
+                <a-asset-item id="spaceship-mtl" src="model/spaceship/spaceship.mtl"></a-asset-item>
+
+                <a-asset-item id="car-obj" src="model/car/Lamborghini_Veneno_(LP750-4)_Roadster_2014.obj"></a-asset-item>
+                <a-asset-item id="car-mtl" src="model/car/Lamborghini_Veneno_(LP750-4)_Roadster_2014.mtl"></a-asset-item>
+
+                <a-asset-item id="akali-obj" src="model/akali/jj.obj"></a-asset-item>
+                <a-asset-item id="akali-mtl" src="model/akali/jj.mtl"></a-asset-item>
+ -->
+                <a-asset-item id="oldcar" src="model/oldcar/scene.gltf"></a-asset-item>
+                <a-asset-item id="ac130" src="model/ac130/scene.gltf"></a-asset-item>
+
+                <!-- <video id="4s" autoplay loop="true" src="video/4s.mp4"></video> -->
+        </a-assets>
+        
+           
+        
+		<a-marker preset='hiro'>
+			<!-- 红色方块 -->
+			<!-- <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
+				<a-torus-knot radius='0.26' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+ 			</a-box> -->
+            
+            <!-- 视频 -->
+             <!-- <a-video src="#4s" width="auto" height="auto" position="0 0 0"></a-video> -->
+
+             <a-entity gltf-model="#oldcar" scale="0.3 0.3 0.3"></a-entity>
+
+		</a-marker>
+
+		<!-- handle matrix marker -->
+		<a-marker type='pattern' url="data/whu2.patt">
+            
+             <a-entity gltf-model="#ac130" scale="0.1 0.1 0.1"></a-entity>
+
+            <!-- 导入模型 -->
+            <!-- <a-entity obj-model="obj: #spaceship-obj; mtl: #spaceship-mtl" scale="0.1 0.1 0.1"></a-entity>
+
+            <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
+				<a-torus-knot radius='0.26' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+ 			</a-box> -->
+		</a-marker>
+		
+		<!-- handle kanji marker -->
+		<a-marker type='pattern' url="data/school.patt">
+			<!-- 绿方块 -->
+			<!-- <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
+				<a-torus-knot radius='0.26' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+			</a-box> -->
+			
+            <!-- 地球 -->
+			<a-sphere src="picture/earth.jpg" radius="0.5" position="0 0.5 0" segments-height="53">
+              <a-animation attribute="scale"
+              dur="1000"
+              from= "1 1 1"
+              to="1 1 1"
+              direction='alternate-reverse'
+              easing= "ease-in-out-circ"     
+              repeat="indefinite">
+              	
+              </a-animation>
+            </a-sphere>
+
+		</a-marker>
+		
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
