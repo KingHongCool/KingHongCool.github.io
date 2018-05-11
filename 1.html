@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<script src="build/aframe.min.js"></script>
+<script src="build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+    <a-scene artoolkit='detectionMode: mono_matrix; sourceType: webcam;'>
+		<a-assets>
+            <a-asset-item id="oldcar" src="model/oldcar/scene.gltf"></a-asset-item>
+            <a-asset-item id="plane" src="model/spitfire/scene.gltf"></a-asset-item>
+            <a-asset-item id="m4a1" src="model/m4a1/scene.gltf"></a-asset-item>
+            <a-asset-item id="p40" src="model/P40/scene.gltf"></a-asset-item>
+            <video id="video" autoplay loop="true" src="video/4s.mp4"></video>
+        </a-assets>
+
+		<a-marker preset='hiro'>
+			<!-- 地球贴图 -->
+			<a-sphere src="picture/earth.jpg" radius="0.5" position="0 0.5 0" segments-height="53"></a-sphere>
+		</a-marker>
+
+		<a-marker type='pattern' url="data/whu2.patt">
+            <!-- 导入汽车模型 -->
+            <a-entity gltf-model="#oldcar" scale="0.3 0.3 0.3" position="0 0.2 0" rotation="0 0 0"></a-entity>             
+		</a-marker>
+		
+		<a-marker type='pattern' url="data/school.patt">
+            <!-- 视频文件作为plane纹理实现增强现实视频 -->
+            <a-entity>
+            	<a-entity geometry="primitive:plane" material="src:#video" rotation="-90 0 0"></a-entity>
+                <a-entity video-controls="src:#video"></a-entity>
+            </a-entity>
+		</a-marker>
+		
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
