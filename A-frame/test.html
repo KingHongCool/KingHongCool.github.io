@@ -4,22 +4,16 @@
 <!-- <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script> -->
 <!-- include aframe-ar.js -->
 <script src="build/aframe-ar.js"></script>
+<script src="build/stats.min.js"></script>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 	<!-- <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
 	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - example for a-frame
 	<br/>
 	Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
-</div> -->
+    </div> -->
 	<!-- <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'> -->
-    <!-- <a-scene embedded arjs='sourceType: webcam; detectionMode: mono;'> -->
     	<a-scene artoolkit='detectionMode: mono_matrix; sourceType: webcam;'>
-		<!-- handle unknown marker -->
-		<!-- <a-marker type='unknown'>
-			<a-box depth="1" height="1" width="1" position='0 0.5 0' material='opacity: 0.5; side:double; color:blue;'></a-box>
-		</a-marker> -->
-
-		<!-- handle hiro marker -->
 		<a-assets>
                <!--  <a-asset-item id="spaceship-obj" src="model/spaceship/spaceship.obj"></a-asset-item>
                 <a-asset-item id="spaceship-mtl" src="model/spaceship/spaceship.mtl"></a-asset-item>
@@ -28,20 +22,20 @@
                 <a-asset-item id="car-mtl" src="model/car/Lamborghini_Veneno_(LP750-4)_Roadster_2014.mtl"></a-asset-item>
 
                 <a-asset-item id="akali-obj" src="model/akali/jj.obj"></a-asset-item>
-                <a-asset-item id="akali-mtl" src="model/akali/jj.mtl"></a-asset-item>
- -->
+                <a-asset-item id="akali-mtl" src="model/akali/jj.mtl"></a-asset-item>-->
                 <a-asset-item id="oldcar" src="model/oldcar/scene.gltf"></a-asset-item>
                 <a-asset-item id="plane" src="model/spitfire/scene.gltf"></a-asset-item>
                 <a-asset-item id="m4a1" src="model/m4a1/scene.gltf"></a-asset-item>
                 <a-asset-item id="p40" src="model/P40/scene.gltf"></a-asset-item>
-
                 <video id="video" autoplay loop="true" src="video/4s.mp4"></video>
-
-
         </a-assets>
         
-           
-        
+		<!-- handle unknown marker -->
+		<!-- <a-marker type='unknown'>
+			<a-box depth="1" height="1" width="1" position='0 0.5 0' material='opacity: 0.5; side:double; color:blue;'></a-box>
+		</a-marker> -->
+
+		<!-- handle hiro marker -->           
 		<a-marker preset='hiro'>
 			<!-- 红色方块 -->
 			<!-- <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
@@ -51,43 +45,36 @@
  			</a-box> -->
             
             <!-- 视频 -->
-             <!-- <a-video src="#4s" width="auto" height="auto" position="0 0 0"></a-video> -->
+            <!-- <a-video src="#4s" width="auto" height="auto" position="0 0 0"></a-video> -->             
+            <!-- <a-entity gltf-model="#plane" scale="0.01 0.01 0.01"></a-entity> -->
 
-             
-             <!-- <a-entity gltf-model="#plane" scale="0.01 0.01 0.01"></a-entity> -->
-             <a-entity>
+            <!-- 战斗机模型 -->
+            <a-entity>
              	<a-entity gltf-model="#p40" scale="0.005 0.005 0.005" position="1 0.5 2" rotation="-30 0 0"></a-entity>
-             	 <a-animation attribute="rotation"
+             	    <a-animation attribute="rotation"
                                     dur="10000"
                                    fill="forwards"
-                                     to="0 360 0"
+                                     to="0 -360 0"
                                  repeat="indefinite"></a-animation>
-             </a-entity>
-             
-
+            </a-entity>
 		</a-marker>
 
-		<!-- handle matrix marker -->
+		<!-- handle whu marker -->
 		<a-marker type='pattern' url="data/whu2.patt">
-
-            
-             <!-- <a-entity gltf-model="#p40" scale="0.2 0.2 0.2"></a-entity> -->
-
-            <!-- 导入模型 -->
-            <!-- <a-entity obj-model="obj: #spaceship-obj; mtl: #spaceship-mtl" scale="0.1 0.1 0.1"></a-entity>
-
+            <!--
             <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
 				<a-torus-knot radius='0.26' radius-tubular='0.05'>
 					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
 				</a-torus-knot>
  			</a-box> -->
+        <!-- 将视频作为纹理导入 ，直接使用video无法自动播放-->
         <a-entity>
             	<a-entity geometry="primitive:plane" material="src:#video" rotation="-90 0 0"></a-entity>
                 <a-entity video-controls="src:#video"></a-entity>
         </a-entity>
 		</a-marker>
 		
-		<!-- handle kanji marker -->
+		<!-- handle school marker -->
 		<a-marker type='pattern' url="data/school.patt">
 			<!-- 绿方块 -->
 			<!-- <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
@@ -96,7 +83,7 @@
 				</a-torus-knot>
 			</a-box> -->
 			
-            <!-- 地球 -->
+            <!-- 地球模型 -->
 			<!-- <a-sphere src="picture/earth.jpg" radius="0.5" position="0 0.5 0" segments-height="53">
               <a-animation attribute="scale"
               dur="1000"
@@ -108,7 +95,8 @@
               	
               </a-animation>
             </a-sphere> -->
-
+        
+        <!-- 旧车模型 -->
         <a-entity>
             <a-entity gltf-model="#oldcar" scale="0.3 0.3 0.3" position="0 0.2 0" rotation="0 0 0"></a-entity>
             <a-animation attribute="rotation"
