@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<script src="build/aframe.min.js"></script>
+<script src="build/aframe-ar.js"></script>
+<script src="build/stats.min.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+
+    <a-scene artoolkit='detectionMode: mono_matrix; sourceType: webcam;'>
+
+		<a-marker preset='hiro'>
+            <!-- 地球模型 -->
+      <a-sphere src="picture/earth.jpg" radius="0.5" position="0 0.5 0" segments-height="53">
+              <a-animation attribute="scale"
+              dur="1000"
+              from= "1 1 1"
+              to="1 1 1"
+              direction='alternate-reverse'
+              easing= "ease-in-out-circ"     
+              repeat="indefinite">
+                
+              </a-animation>
+            </a-sphere>
+		</a-marker>
+
+		<!-- handle whu marker -->
+		<a-marker type='pattern' url="data/whu2.patt">
+            <!-- 地球模型 -->
+      <a-sphere src="picture/earth.jpg" radius="0.5" position="0 0.5 0" segments-height="53">
+              <a-animation attribute="scale"
+              dur="1000"
+              from= "1 1 1"
+              to="1 1 1"
+              direction='alternate-reverse'
+              easing= "ease-in-out-circ"     
+              repeat="indefinite">
+                
+              </a-animation>
+            </a-sphere>
+		</a-marker>	
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
