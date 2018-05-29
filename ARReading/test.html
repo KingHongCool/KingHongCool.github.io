@@ -4,7 +4,7 @@
 <!-- <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script> -->
 <!-- include aframe-ar.js -->
 <script src="build/aframe-ar.js"></script>
-<script src="build/stats.min.js"></script>
+<!-- <script src="build/stats.min.js"></script> -->
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 	<!-- <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
@@ -15,18 +15,13 @@
 	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
     	<!-- <a-scene artoolkit='detectionMode: mono_matrix; sourceType: webcam;'> -->
 		<a-assets>
-               <!--  <a-asset-item id="spaceship-obj" src="model/spaceship/spaceship.obj"></a-asset-item>
-                <a-asset-item id="spaceship-mtl" src="model/spaceship/spaceship.mtl"></a-asset-item>
-
-                <a-asset-item id="car-obj" src="model/car/Lamborghini_Veneno_(LP750-4)_Roadster_2014.obj"></a-asset-item>
-                <a-asset-item id="car-mtl" src="model/car/Lamborghini_Veneno_(LP750-4)_Roadster_2014.mtl"></a-asset-item>
-
-                <a-asset-item id="akali-obj" src="model/akali/jj.obj"></a-asset-item>
-                <a-asset-item id="akali-mtl" src="model/akali/jj.mtl"></a-asset-item>-->
                 <a-asset-item id="oldcar" src="model/oldcar/scene.gltf"></a-asset-item>
                 <a-asset-item id="plane" src="model/spitfire/scene.gltf"></a-asset-item>
                 <a-asset-item id="m4a1" src="model/m4a1/scene.gltf"></a-asset-item>
                 <a-asset-item id="p40" src="model/P40/scene.gltf"></a-asset-item>
+                <a-asset-item id="tank" src="model/panzer4_tank/scene.gltf"></a-asset-item>
+                <a-asset-item id="car" src="model/hanmaCar/scene.gltf"></a-asset-item>
+                <a-asset-item id="castle" src="model/cinderella_castle/scene.gltf"></a-asset-item>
                 <video id="video" autoplay loop="true" src="video/4s.mp4"></video>
         </a-assets>
         
@@ -36,7 +31,7 @@
 		</a-marker> -->
 
 		<!-- handle hiro marker -->           
-		<a-marker preset='hiro'>
+		<a-marker type='pattern' url="data/p40.patt">
 			<!-- 红色方块 -->
 			<!-- <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
 				<a-torus-knot radius='0.26' radius-tubular='0.05'>
@@ -67,11 +62,24 @@
 					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
 				</a-torus-knot>
  			</a-box> -->
-        <!-- 将视频作为纹理导入 ，直接使用video无法自动播放-->
-        <a-entity>
-            	<a-entity geometry="primitive:plane" material="src:#video" rotation="-90 0 0"></a-entity>
-                <a-entity video-controls="src:#video"></a-entity>
+
+ 	    <a-entity>
+            <a-entity gltf-model="#tank" scale="0.005 0.005 0.005" position="0 0.2 0" rotation="0 0 0"></a-entity>
+            <a-animation attribute="rotation"
+                                    dur="50000"
+                                   fill="forwards"
+                                     to="0 360 0"
+                                 repeat="indefinite"></a-animation>             
         </a-entity>
+
+
+        			<!-- 红色方块 -->
+		<a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
+				<a-torus-knot radius='0.26' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+ 		</a-box>
+
 		</a-marker>
 		
 		<!-- handle school marker -->
@@ -97,15 +105,32 @@
             </a-sphere> -->
         
         <!-- 旧车模型 -->
-        <a-entity>
+<!--         <a-entity>
             <a-entity gltf-model="#oldcar" scale="0.3 0.3 0.3" position="0 0.2 0" rotation="0 0 0"></a-entity>
             <a-animation attribute="rotation"
                                     dur="10000"
                                    fill="forwards"
                                      to="0 360 0"
                                  repeat="indefinite"></a-animation>             
-        </a-entity>
+        </a-entity> -->
 
+
+        <!-- 将视频作为纹理导入 ，直接使用video无法自动播放-->
+        <a-entity>
+            	<a-entity geometry="primitive:plane" material="src:#video" rotation="-90 0 0"></a-entity>
+                <a-entity video-controls="src:#video"></a-entity>
+        </a-entity>
+		</a-marker>
+
+		<a-marker preset='hiro'>
+		<a-entity>
+            <a-entity gltf-model="#car" scale="0.0010 0.0010 0.0010" position="0 0 0" rotation="0 0 0"></a-entity>
+<!--             <a-animation attribute="rotation"
+                                    dur="20000"
+                                   fill="forwards"
+                                     to="0 360 0"
+                                 repeat="indefinite"></a-animation>     -->         
+        </a-entity>
 		</a-marker>
 		
 		<!-- add a simple camera -->

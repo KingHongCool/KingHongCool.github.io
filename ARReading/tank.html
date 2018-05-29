@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<script src="build/aframe.min.js"></script>
+<script src="build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+		<a-assets>
+                <a-asset-item id="p40" src="model/P40/scene.gltf"></a-asset-item>
+                <a-asset-item id="car" src="model/hanmaCar/scene.gltf"></a-asset-item>
+
+                <video id="video" autoplay loop="true" src="video/4s.mp4"></video>
+        </a-assets>
+                
+		<a-marker type='pattern' url="data/p40.patt">
+            <!-- 战斗机模型 -->
+            <a-entity>
+             	<a-entity gltf-model="#p40" scale="0.005 0.005 0.005" position="1 0.5 2" rotation="-30 0 0"></a-entity>
+             	    <a-animation attribute="rotation"
+                                    dur="5000"
+                                   fill="forwards"
+                                     to="0 -360 0"
+                                 repeat="indefinite"></a-animation>
+            </a-entity>
+		</a-marker>
+
+		<!-- handle whu marker -->
+		<a-marker type='pattern' url="data/car.patt">
+            <a-entity>
+            <a-entity gltf-model="#car" scale="0.0010 0.0010 0.0010" position="0 0 0" rotation="0 0 0"></a-entity>
+<!--             <a-animation attribute="rotation"
+                                    dur="20000"
+                                   fill="forwards"
+                                     to="0 360 0"
+                                 repeat="indefinite"></a-animation>     -->         
+        </a-entity>
+		</a-marker>
+		
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
